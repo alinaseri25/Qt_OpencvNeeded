@@ -155,11 +155,11 @@ void Qopencv::colorReduce(Mat &Image, int dev)
     }
 }
 
-bool Qopencv::AddLogo(Mat &Image, Mat &logo)
+bool Qopencv::AddLogo(Mat &Image, Mat &logo, QPoint _point)
 {
     if(!logo.empty())
     {
-        cv::Mat imageROI = Image(cv::Rect(20,20,logo.cols,logo.rows));
+        cv::Mat imageROI = Image(cv::Rect(_point.x(),_point.y(),logo.cols,logo.rows));
         cv::addWeighted(imageROI,1,logo,0.9,0.9,imageROI);
         //cv::Mat Mask = cv::imread("D:/1.png");
         //logo.copyTo(imageROI,Mask);

@@ -19,7 +19,7 @@ public:
     QImage MatToQImage(Mat *Image);
     cv::Mat QImageToCvMat( const QImage &inImage, bool inCloneImageData = true );
     void colorReduce(cv::Mat &Image, int dev=64);
-    bool AddLogo(cv::Mat &Image,cv::Mat &logo);
+    bool AddLogo(cv::Mat &Image, cv::Mat &logo, QPoint _point);
     void salt(cv::Mat &Image,int n);
     int countCamera(void);
 
